@@ -1,2 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Example_1</string>
+    <string name="main_et_send_text_01">Введите сюда то, что хотите передать во второе активити.</string>
+    <string name="main_button_send_text">Отправить</string>
+    <string name="second_button_send_email">EMAIL</string>
+</resources>
