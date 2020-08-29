@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Example_1</string>
+    <string name="main_et_send_text_01">Enter here what you want to transfer to the second activity.</string>
+    <string name="main_button_send_text">Send</string>
+    <string name="second_button_send_email">EMAIL</string>
+</resources>
