@@ -10,9 +10,9 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final String LOG_TAG = "Main_logs";
+    private final String LOG_TAG = "main_logs";
 
-    private EditText etSendToSecondActivity;
+    private EditText sendToEditText;
     private Button btnSend;
 
     @Override
@@ -23,24 +23,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initElem();
     }
 
-    private void initElem() {
-        etSendToSecondActivity = findViewById(R.id.etSendToSecondActivity);
-        btnSend = findViewById(R.id.btnSend);
-
-        btnSend.setOnClickListener(this);
-        Log.d(LOG_TAG, "Элементы инизиализированы");
-    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnSend:
-                String sendText = etSendToSecondActivity.getText().toString();
-                SecondActivity.startActivity(this, sendText);
+                String sendText = sendToEditText.getText().toString();
+                startActivity(SecondActivity.startActivity(this, sendText));
                 Log.d(LOG_TAG, "btnSend was clicked");
                 return;
             default:
                 return;
         }
+    }
+
+    private void initElem() {
+        sendToEditText = findViewById(R.id.sendToEditText);
+        btnSend = findViewById(R.id.btnSend);
+
+        btnSend.setOnClickListener(this);
+        Log.d(LOG_TAG, "Элементы инизиализированы");
     }
 }

@@ -7,13 +7,10 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/etSendToSecondActivity"
+        android:id="@+id/sendToEditText"
         style="@style/mainTextEditToSend"
-        android:text=""
         android:layout_margin="@dimen/layoutStandart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
@@ -23,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="@string/main_button_send_text"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/etSendToSecondActivity"
-        app:layout_constraintStart_toStartOf="@+id/etSendToSecondActivity"
-        app:layout_constraintTop_toBottomOf="@+id/etSendToSecondActivity" />
+        app:layout_constraintEnd_toEndOf="@+id/sendToEditText"
+        app:layout_constraintStart_toStartOf="@+id/sendToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/sendToEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
