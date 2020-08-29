@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
+public class SecondActivity extends AppCompatActivity {
     private final String LOG_TAG = "second_logs";
     private final String SUBJECT = "me?";
     private final String ATTACHMENT = "testAttachment";
@@ -33,16 +33,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         secondTextView.setText(textFromFirstActivity);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnSecondSendEmail:
-                sendMailFromIntent();
-                return;
-            default:
-                return;
-        }
-    }
 
     public static Intent startActivity(Context context, String message) {
         return new Intent(context, SecondActivity.class)
@@ -56,7 +46,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         secondTextView = findViewById(R.id.tvSecondGetMessage);
         secondButtonSendEmail = findViewById(R.id.btnSecondSendEmail);
 
-        secondButtonSendEmail.setOnClickListener(this);
+        secondButtonSendEmail.setOnClickListener(v -> sendMailFromIntent());
         Log.d(LOG_TAG, "Элементы инизиализированы");
     }
 
