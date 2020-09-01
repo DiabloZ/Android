@@ -8,12 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class PendingHotFragment extends Fragment {
+public class SectionHotFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pending_hot, container, false);
+        return inflater.inflate(R.layout.fragment_section_hot, container, false);
     }
 }
