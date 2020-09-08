@@ -1,3 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Example_2</string>
+    <string name="fullName">Suhov Vitaly</string>
+    <string name="android_student_department">Student department</string>
+    <string name="android_beginner">Android beginner</string>
+    <string name="inquisitive_student">Inquisitive student</string>
+    <string name="myMessage">Beginner Android developer. \nI am sure that the result is doomed to success if the work continues to be done on the difficulties that stand in the way.</string>
+    <string name="enter_your_message">Enter your message...</string>
+    <string name="send_message">Send message</string>
 </resources>

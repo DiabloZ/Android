@@ -1,3 +1,4 @@
+include ':app:Example_2'
 include 'app:Example_1'
 include ':app'
 rootProject.name = "Android Academy"
