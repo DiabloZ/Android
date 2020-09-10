@@ -65,8 +65,8 @@ public class Data{
 	@SerializedName("discussion_type")
 	private Object discussionType;
 
-	@SerializedName("edited")
-	private boolean edited;
+/*	@SerializedName("edited")
+	private boolean edited;*/
 
 	@SerializedName("allow_live_comments")
 	private boolean allowLiveComments;
@@ -424,9 +424,9 @@ public class Data{
 		return discussionType;
 	}
 
-	public boolean isEdited(){
+/*	public boolean isEdited(){
 		return edited;
-	}
+	}*/
 
 	public boolean isAllowLiveComments(){
 		return allowLiveComments;
@@ -799,8 +799,9 @@ public class Data{
 	@Override
 	public String toString() {
 		return "Data{" +
-				"modhash='" + modhash + '\'' +
-				", children=" + children +
+				"subreddit='" + subreddit + '\'' +
+				", author='" + author + '\'' +
+				", contestMode=" + contestMode +
 				'}';
 	}
 }
