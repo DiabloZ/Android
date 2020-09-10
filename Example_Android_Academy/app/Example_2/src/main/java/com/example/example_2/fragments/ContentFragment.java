@@ -17,14 +17,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.example_2.R;
-import com.example.example_2.constants.Constants;
 
 public class ContentFragment extends Fragment {
-    protected EditText fieldMessage;
-    protected Button sendMessageBtn;
-    protected ImageView telegramBtn, whatsappBtn;
+    private EditText fieldMessage;
+    private Button sendMessageBtn;
+    private ImageView telegramBtn, whatsappBtn;
 
-    protected Context context;
+    private static final String URI_telegram = "https://t.me/DiabloZ";
+    private static final String URI_whatsapp = "https://wa.me/79680082921";
+    private static final String SUBJECT = "me?";
+    private static final String ATTACHMENT = "testAttachment";
+
+    private static final String[] EMAIL = {"test@test.com", "1@2.ra"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,6 @@ public class ContentFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initViews(view);
-        context = getContext();
     }
 
     private void initViews(View view) {
@@ -53,33 +56,27 @@ public class ContentFragment extends Fragment {
         telegramBtn = view.findViewById(R.id.telegramBtn);
         whatsappBtn = view.findViewById(R.id.whatsappBtn);
 
-        telegramBtn.setOnClickListener(this::sendMessenger);
-        whatsappBtn.setOnClickListener(this::sendMessenger);
+        telegramBtn.setOnClickListener(v -> sendMessenger(URI_telegram));
+        whatsappBtn.setOnClickListener(v -> sendMessenger(URI_whatsapp));
         sendMessageBtn.setOnClickListener(v -> sendMailFromIntent());
     }
 
-    private void sendMessenger(View view) {
-        Uri webPage = Uri.parse("http://uncnownButton.wtf");
-        switch (view.getId()){
-            case R.id.telegramBtn:
-                webPage = Uri.parse(Constants.URI_telegram);
-                break;
-            case R.id.whatsappBtn:
-                webPage = Uri.parse(Constants.URI_whatsapp);
-                break;
-        }
+    private void sendMessenger(String URL) {
+        Uri webPage = Uri.parse(URL);
         Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
-        if (intent.resolveActivity(context.getPackageManager()) != null)startActivity(intent);
+        if (intent.resolveActivity(requireContext().getPackageManager()) != null)startActivity(intent);
     }
 
     private void sendMailFromIntent() {
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_EMAIL, Constants.EMAIL);
-        intent.putExtra(Intent.EXTRA_SUBJECT, Constants.SUBJECT);
-        intent.putExtra(Intent.EXTRA_STREAM, Constants.ATTACHMENT);
-        intent.putExtra(Intent.EXTRA_TEXT, fieldMessage.getText().toString());
-        if(intent.resolveActivity(context.getPackageManager()) != null) startActivity(intent);
+        intent.setType("*/*")
+                .putExtra(Intent.EXTRA_EMAIL, EMAIL)
+                .putExtra(Intent.EXTRA_SUBJECT, SUBJECT)
+                .putExtra(Intent.EXTRA_STREAM, ATTACHMENT)
+                .putExtra(Intent.EXTRA_TEXT, fieldMessage.getText().toString());
+        if(intent.resolveActivity(requireContext().getPackageManager()) != null) startActivity(intent);
+        requireContext();
+        requireActivity();
     }
 
 

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Project name-->
     <string name="app_name">Example_2</string>
+    <!--Main activity-->
     <string name="fullName">Сухов Виталий</string>
+    <!--Fragment content-->
     <string name="android_student_department">Студенческий департамент</string>
     <string name="android_beginner">Новичок в андройдоведение</string>
     <string name="inquisitive_student">Пытливый студент</string>
