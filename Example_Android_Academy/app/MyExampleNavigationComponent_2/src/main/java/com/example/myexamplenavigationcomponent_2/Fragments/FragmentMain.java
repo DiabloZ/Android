@@ -43,7 +43,8 @@ public class FragmentMain extends Fragment {
         secondFragmentBtn = view.findViewById(R.id.secondFragmentBtn);
         thirdFragmentBtn = view.findViewById(R.id.thirdFragmentBtn);
 
-        firstFragmentBtn.setOnClickListener(v ->    navController.navigate(R.id.action_fragmentMain_to_fragmentPageFirst));
+
+        firstFragmentBtn.setOnClickListener(v ->    navController.navigate(FragmentMainDirections.actionFragmentMainToFragmentPageFirst().getActionId()));
         secondFragmentBtn.setOnClickListener(v ->   navController.navigate(R.id.action_fragmentMain_to_fragmentPageSecond));
         thirdFragmentBtn.setOnClickListener(v ->    navController.navigate(R.id.action_fragmentMain_to_fragmentPageThird));
     }
