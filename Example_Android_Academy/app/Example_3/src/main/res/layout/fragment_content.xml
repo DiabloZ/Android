@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ContentFragment">
+
+        <ImageView
+            android:id="@+id/imageFeatureFirst"
+            style="@style/ImgMain"
+            android:src="@mipmap/ic_student_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textFeatureFirst"
+            style="@style/TextMain"
+            android:text="@string/android_student_department"
+            app:layout_constraintBottom_toBottomOf="@+id/imageFeatureFirst"
+            app:layout_constraintStart_toEndOf="@+id/imageFeatureFirst"
+            app:layout_constraintTop_toTopOf="@+id/imageFeatureFirst" />
+
+        <ImageView
+            android:id="@+id/imageFeatureSecond"
+            style="@style/ImgMain"
+            android:src="@mipmap/ic_beginner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageFeatureFirst" />
+
+        <TextView
+            android:id="@+id/textFeatureSecond"
+            style="@style/TextMain"
+            android:text="@string/android_beginner"
+            app:layout_constraintBottom_toBottomOf="@+id/imageFeatureSecond"
+            app:layout_constraintStart_toEndOf="@+id/imageFeatureSecond"
+            app:layout_constraintTop_toTopOf="@+id/imageFeatureSecond" />
+
+        <ImageView
+            android:id="@+id/imageFeatureThird"
+            style="@style/ImgMain"
+            android:src="@drawable/hs_train"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageFeatureSecond" />
+
+        <TextView
+            android:id="@+id/FeatureThird"
+            style="@style/TextMain"
+            android:text="@string/inquisitive_student"
+            app:layout_constraintBottom_toBottomOf="@+id/imageFeatureThird"
+            app:layout_constraintStart_toEndOf="@+id/imageFeatureThird"
+            app:layout_constraintTop_toTopOf="@+id/imageFeatureThird" />
+
+        <View
+            android:id="@+id/topBorder"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@color/colorDivider"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/FeatureThird" />
+
+        <TextView
+            android:id="@+id/myMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/myMessage"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/topBorder" />
+
+        <View
+            android:id="@+id/bottomBorder"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@color/colorDivider"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/myMessage" />
+
+        <EditText
+            android:id="@+id/fieldMessage"
+            android:inputType="textLongMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:hint="@string/enter_your_message"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/bottomBorder">
+                <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/sendMessageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_border"
+            android:gravity="center"
+            android:text="@string/send_message"
+            android:textColor="@color/colorBtnSend"
+            android:paddingStart="12dp"
+            android:paddingEnd="6dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/fieldMessage"
+            app:layout_constraintTop_toBottomOf="@+id/fieldMessage" />
+
+        <ImageView
+            android:id="@+id/telegramBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_telega"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/whatsappBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sendMessageBtn"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/whatsappBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="100dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_whatsapp"
+            app:layout_constraintBottom_toBottomOf="@+id/telegramBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.685"
+            app:layout_constraintStart_toEndOf="@+id/telegramBtn"
+            app:layout_constraintTop_toTopOf="@+id/telegramBtn"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

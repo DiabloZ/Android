@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentMain">
+
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.myexamplenavigationcomponent_2.Fragments.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPageSecond"
+            app:destination="@id/fragmentPageSecond"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPageFirst"
+            app:destination="@id/fragmentPageFirst"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPageThird"
+            app:destination="@id/fragmentPageThird"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPageFirst"
+        android:name="com.example.myexamplenavigationcomponent_2.Fragments.FragmentPageFirst"
+        android:label="fragment_page_first"
+        tools:layout="@layout/fragment_page_first" />
+    <fragment
+        android:id="@+id/fragmentPageSecond"
+        android:name="com.example.myexamplenavigationcomponent_2.Fragments.FragmentPageSecond"
+        android:label="fragment_page_second"
+        tools:layout="@layout/fragment_page_second" />
+    <fragment
+        android:id="@+id/fragmentPageThird"
+        android:name="com.example.myexamplenavigationcomponent_2.Fragments.FragmentPageThird"
+        android:label="fragment_page_third"
+        tools:layout="@layout/fragment_page_third" >
+
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+        <argument
+            android:name="amount"
+            app:argType="com.example.myexamplenavigationcomponent_2.Money"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_fragmentPageThird_to_fragmentPageThirdOne"
+            app:destination="@id/fragmentPageThirdOne"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPageThirdOne"
+        android:name="com.example.myexamplenavigationcomponent_2.Fragments.FragmentPageThirdOne"
+        android:label="fragment_page_third_one"
+        tools:layout="@layout/fragment_page_third_one" >
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+        <argument
+            android:name="amount"
+            app:argType="com.example.myexamplenavigationcomponent_2.Money"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_fragmentPageThirdOne_to_fragmentPageThirdOneOne"
+            app:destination="@id/fragmentPageThirdOneOne"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPageThirdOneOne"
+        android:name="com.example.myexamplenavigationcomponent_2.Fragments.FragmentPageThirdOneOne"
+        android:label="fragment_page_third_one_one"
+        tools:layout="@layout/fragment_page_third_one_one" >
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+        <argument
+            android:name="amount"
+            app:argType="com.example.myexamplenavigationcomponent_2.Money"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_fragmentPageThirdOneOne_to_fragmentMain"
+            app:destination="@id/fragmentMain"
+            app:popUpTo="@id/fragmentMain"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+</navigation>

@@ -1,17 +1,11 @@
-
-
-
 apply plugin: 'com.android.application'
-
-apply plugin: "androidx.navigation.safeargs"
-
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.myexampleretrofitparsejson_1"
+        applicationId "com.example.example_3"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -33,15 +27,20 @@ android {
 }
 
 dependencies {
+    //Local binary dependency
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    //Appcompat
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    //Constraint
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    //Retrofit JSON
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    def nav_version = "2.3.0"
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
 }
