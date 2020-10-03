@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/creatorsFragment"
+        android:name="com.example.example_3.fragments.CreatorsFragments.CreatorsFragment"
+        android:label="CreatorsFragment" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.example_3.fragments.StartFragment.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_creatorsFragment"
+            app:destination="@id/creatorsFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_viewportFragment"
+            app:destination="@id/viewportFragment" />
+        <argument
+            android:name="Meme"
+            app:argType="com.example.example_3.JSON.Meme" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewportFragment"
+        android:name="com.example.example_3.fragments.ViewportFragments.ViewportFragment"
+        android:label="ViewportFragment" >
+        <argument
+            android:name="Meme"
+            app:argType="com.example.example_3.JSON.Meme" />
+    </fragment>
+</navigation>

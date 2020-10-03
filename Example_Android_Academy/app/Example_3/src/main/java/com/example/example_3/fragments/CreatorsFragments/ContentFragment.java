@@ -1,6 +1,5 @@
-package com.example.example_3.fragments;
+package com.example.example_3.fragments.CreatorsFragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,16 +18,16 @@ import android.widget.ImageView;
 import com.example.example_3.R;
 
 public class ContentFragment extends Fragment {
-    private EditText fieldMessage;
-    private Button sendMessageBtn;
-    private ImageView telegramBtn, whatsappBtn;
-
     private static final String URI_telegram = "https://t.me/DiabloZ";
     private static final String URI_whatsapp = "https://wa.me/79680082921";
     private static final String SUBJECT = "me?";
     private static final String ATTACHMENT = "testAttachment";
 
     private static final String[] EMAIL = {"test@test.com", "1@2.ra"};
+
+    private EditText fieldMessage;
+    private Button sendMessageBtn;
+    private ImageView telegramBtn, whatsappBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -11,4 +11,6 @@
     <string name="myMessage">Beginner Android developer. \nI am sure that the result is doomed to success if the work continues to be done on the difficulties that stand in the way.</string>
     <string name="enter_your_message">Enter your message...</string>
     <string name="send_message">Send message</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
