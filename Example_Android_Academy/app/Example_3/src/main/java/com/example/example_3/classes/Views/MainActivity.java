@@ -1,4 +1,4 @@
-package com.example.example_3.classes;
+package com.example.example_3.classes.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,5 +12,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PlaceholderClass.getInstance(this);
     }
 }

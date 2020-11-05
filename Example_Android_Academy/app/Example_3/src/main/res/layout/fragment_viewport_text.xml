@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundViewpoint"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/topicTextView"
+        style="@style/TextItemOfRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Тема"
+        app:layout_constraintBottom_toTopOf="@+id/headingTextView"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/headingTextView"
+        style="@style/TextItemOfRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Жирный и чёрный заголовок"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/contentTextView"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/contentTextView"
+        style="@style/TextItemOfRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:maxLines="3"
+        android:text="Много текста. Много текста. Много текста. Много текста. Много текста. Много текста. Много текста. Много текста. Много текста. Много текста."
+        app:layout_constraintBottom_toTopOf="@+id/dateTextView"/>
+
+    <TextView
+        android:id="@+id/dateTextView"
+        style="@style/TextItemOfRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="4 часа назад, в 15.30"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

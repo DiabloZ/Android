@@ -16,7 +16,7 @@
         android:textColor="@color/colorTextView"
         android:textSize="20sp"
         tools:ignore="RtlSymmetry" />
-    
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         android:baselineAligned="false">
         <fragment
             android:id="@+id/fragmentPhoto"
-            android:name="com.example.example_3.fragments.PhotoFragment"
+            android:name="com.example.example_3.fragments.CreatorsFragments.PhotoFragment"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent"
@@ -40,7 +40,7 @@
 
             <fragment
                 android:id="@+id/fragmentContent"
-                android:name="com.example.example_3.fragments.ContentFragment"
+                android:name="com.example.example_3.fragments.CreatorsFragments.ContentFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_content" />

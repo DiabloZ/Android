@@ -27,13 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnGetData = findViewById(R.id.btnGetData);
-        btnGetData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getRetrofit();
-            }
-        });
+        btnGetData = findViewById(R.id.btnGetData);
+        btnGetData.setOnClickListener(view -> getRetrofit());
     }
 
 

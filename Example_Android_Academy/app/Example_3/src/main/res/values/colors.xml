@@ -7,4 +7,5 @@
     <color name="colorBtnSend">#B6B6B6</color>
     <color name="colorTextView">#FFFFFF</color>
     <color name="colorBackgroundTextView">#050505</color>
+    <color name="colorBackgroundViewpoint">#35C6C6C6</color>
 </resources>
