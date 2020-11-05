@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "meme_table")
-class DBMemeEntity {
+class MemeEntity {
     @PrimaryKey(autoGenerate = true)
     private int num;
 
@@ -19,8 +19,8 @@ class DBMemeEntity {
     private String gifURL;
     private String previewURL;
 
-    public DBMemeEntity(int id, int votes, int commentsCount, String width, String height,
-                        String description, String date, String author, String gifURL, String previewURL) {
+    public MemeEntity(int id, int votes, int commentsCount, String width, String height,
+                      String description, String date, String author, String gifURL, String previewURL) {
         this.id = id;
         this.votes = votes;
         this.commentsCount = commentsCount;

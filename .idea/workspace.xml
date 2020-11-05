@@ -9,14 +9,27 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Second" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b07093b7-c7bc-4842-b59f-0ef4b258f481" name="Default Changelist" comment="" />
+    <list default="true" id="b07093b7-c7bc-4842-b59f-0ef4b258f481" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Example_Android_Academy/app/Example_4/src/main/java/com/example/example_4/classes/Handlers/ConstantManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example_Android_Academy/app/Example_4/src/main/java/com/example/example_4/classes/Handlers/DB/MemeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example_Android_Academy/app/Example_4/src/main/java/com/example/example_4/classes/Handlers/DB/MemeDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example_Android_Academy/app/Example_4/src/main/java/com/example/example_4/classes/Handlers/DB/MemeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example_Android_Academy/app/Example_4/src/main/java/com/example/example_4/classes/Handlers/DB/MemeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example_Android_Academy/app/Example_3/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Example_Android_Academy/app/Example_3/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example_Android_Academy/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Example_Android_Academy/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example_Android_Academy/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Example_Android_Academy/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example_Android_Academy/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Example_Android_Academy/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.1.95:5555" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -45,14 +58,15 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="b7ca7894" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-28T14:38:46.717Z" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Example_Android_Academy" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -75,9 +89,7 @@
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
     <configuration name="Example_1" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Example_1" />
@@ -86,6 +98,7 @@
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -121,14 +134,17 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="app" />
@@ -137,6 +153,7 @@
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -172,18 +189,21 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Android App.app" />
       <item itemvalue="Android App.Example_1" />
+      <item itemvalue="Android App.app" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -209,6 +229,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1374" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598688114834" />
+    <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1604421946340">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604421946340" />
     <state x="1725" y="412" key="#com.intellij.ide.util.MemberChooser" timestamp="1598623350554">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -223,9 +247,10 @@
     </state>
     <state x="1137" y="513" key="AndroidCreateXmlResourceDialog/0.0.2559.1400@0.0.2559.1400" timestamp="1598612340868" />
     <state x="1137" y="513" key="AndroidCreateXmlResourceDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598627356552" />
-    <state x="1059" y="455" key="FileChooserDialogImpl" timestamp="1598691274758">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="794" y="338" key="FileChooserDialogImpl" timestamp="1604422006204">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="794" y="338" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604422006204" />
     <state x="1059" y="455" key="FileChooserDialogImpl/0.0.2559.1400@0.0.2559.1400" timestamp="1598612990097" />
     <state x="1059" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598691274758" />
     <state width="616" height="355" key="GridCell.Tab.0.bottom" timestamp="1598688021484">

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Project name-->
+    <string name="app_name">Example_4</string>
+    <!--Main activity-->
+    <string name="fullName">Сухов Виталий</string>
+    <!--Fragment content-->
+    <string name="android_student_department">Студенческий департамент</string>
+    <string name="android_beginner">Новичок в андройдоведение</string>
+    <string name="inquisitive_student">Пытливый студент</string>
+    <string name="myMessage">Начинающий андройд разработчик. \nЯ уверен, что результат обречён на успех, если работа продолжается несмотря на все предстоящие трудности.</string>
+    <string name="enter_your_message">Введите ваше сообщение</string>
+    <string name="send_message">Отправить сообщение</string>
+</resources>

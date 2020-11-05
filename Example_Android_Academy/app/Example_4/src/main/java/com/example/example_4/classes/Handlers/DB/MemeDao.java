@@ -7,25 +7,25 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.example_4.JSON.Meme;
+
 
 import java.util.List;
 
 @Dao
-public interface DBMemeDao {
+public interface MemeDao {
 
     @Insert
-    void insert(Meme meme);
+    void insert(MemeEntity meme);
 
     @Update
-    void update(Meme meme);
+    void update(MemeEntity meme);
 
     @Delete
-    void delete(Meme meme);
+    void delete(MemeEntity meme);
 
     @Query("DELETE FROM meme_table")
     void deleteAllMemes();
 
     @Query("SELECT * FROM meme_table ORDER BY id DESC")
-    LiveData<List<Meme>> getAllMemes();
+    LiveData<List<MemeEntity>> getAllMemes();
 }
