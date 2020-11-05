@@ -1,0 +1,11 @@
+com/example/mytestmoxyfragment/test1/test2/HolloWorldPresenter.java
+ com.example.mytestmoxyfragment.test1.test2.HolloWorldPresenter
+com/example/mytestmoxyfragment/MainActivity.java
+ com.example.mytestmoxyfragment.MainActivity
+com/example/mytestmoxyfragment/test1/test2/HolloWorldFragment.java
+ com.example.mytestmoxyfragment.test1.test2.HolloWorldFragment
+ com.example.mytestmoxyfragment.test1.test2.HolloWorldFragment$test
+com/example/mytestmoxyfragment/test1/test2/Fragment1.java
+ com.example.mytestmoxyfragment.test1.test2.Fragment1
+com/example/mytestmoxyfragment/BuildConfig.java
+ com.example.mytestmoxyfragment.BuildConfig

@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".classes.Views.MainActivity"
+            android:name="com.example.example_3.classes.Views.MainActivity"
             android:windowSoftInputMode="adjustPan">
 
             <intent-filter>

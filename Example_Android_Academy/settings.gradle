@@ -1,5 +1,6 @@
 include ':app:MyExampleNavigationComponent_2'
 include ':app:MyExampleRetrofitParseJSON_1'
+include ':app:Example_4'
 include ':app:Example_3'
 include ':app:Example_2'
 include ':app:Example_1'
