@@ -1,18 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:tabPaddingTop="15dp"
+        app:tabPaddingBottom="10dp"
+        android:background="@android:color/transparent"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorDivider"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+<!--    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewLast"
+            android:text="@string/last"
+            style="@style/ButtonMain"/>
+        <TextView
+            android:id="@+id/textViewBest"
+            android:text="@string/best"
+            style="@style/ButtonMain"/>
+        <TextView
+            android:id="@+id/textViewHot"
+            android:text="@string/hot"
+            style="@style/ButtonMain"/>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_pager"
+        android:layout_width="match_parent"
+        android:layout_height="630dp">
+
+    </androidx.viewpager2.widget.ViewPager2>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textPreviousPicture"
+            android:text="Предыдущая картинка"
+            style="@style/ButtonMain"/>
+        <TextView
+            android:id="@+id/textNextPicture"
+            android:text="Следующая картинка"
+            style="@style/ButtonMain"/>
+    </LinearLayout>-->
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

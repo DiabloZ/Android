@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Android_Developer_Fintech2020_Tinkoff</string>
+    <string name="last">Свежее</string>
+    <string name="best">Лучшее</string>
+    <string name="hot">Горячее</string>
+    <string name="last_image">Last image</string>
+    <string name="best_image">Best image</string>
+    <string name="hot_image">Hot image</string>
 </resources>
