@@ -1,74 +1,71 @@
-package suhov.com.fragments.ListCrypto
+package suhov.com.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list_crypto.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import suhov.com.R
-import suhov.com.models.CryptoData
-import suhov.com.models.list.CoinList
-import suhov.com.network.RetroInstance
-import suhov.com.network.RetroService
-import java.util.concurrent.ThreadPoolExecutor
-
+import suhov.com.adapters.ListCryptoRecyclerAdapter
+import suhov.com.network.models.CryptoData
+import suhov.com.viewModel.ListCryptoViewModel
 
 class ListCrypto() : Fragment() {
-    private val TAG:String = "ListCryptocurrencies"
-
+    private lateinit var viewModel: ListCryptoViewModel
+    private var cryptoList:ArrayList<CryptoData> = ArrayList()
     private lateinit var cryptoAdapter: ListCryptoRecyclerAdapter
+
+    private val emptyString = ""
+    private val emptyData = 0.0
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_list_crypto, container, false)
-        return view
+        viewModel = ViewModelProvider(this).get(ListCryptoViewModel::class.java)
+        return inflater.inflate(R.layout.fragment_list_crypto, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setObserve()
         initRecyclerView()
-        addDataSet()
+        restoreCryptoList()
     }
 
-    private fun addDataSet() {
-        var dataBase:ArrayList<CryptoData> = ArrayList()
-
-        val retroInstance = RetroInstance.getRetrogitInstanceCryptoList().create(RetroService::class.java)
-        val request = retroInstance.getListFromAPI()
-        request.enqueue(object : Callback<CoinList> {
-            override fun onResponse(call: Call<CoinList>, response: Response<CoinList>) {
-                if (response.isSuccessful) {
-
-                    val dataList = response.body()?.data
-                    for (data in dataList!!) {
-                        dataBase.add(
-                                CryptoData(
-                                        data?.id.toString(),
-                                        data?.name.toString(),
-                                        data?.symbol.toString())
-                        )
-                        Log.i(TAG, "onResponse: " + dataBase.get(dataBase.size-1).name)
-                    }
-
-                }
-                cryptoAdapter.update(dataBase)
-            }
-
-            override fun onFailure(call: Call<CoinList>, t: Throwable) {
-                TODO("Not yet implemented")
+    private fun setObserve() {
+        viewModel.showProgress.observe(viewLifecycleOwner, Observer {
+            if (it){
+                load_progress.visibility = VISIBLE
+            } else {
+                load_progress.visibility = GONE
             }
         })
 
-        cryptoAdapter.submitList(dataBase)
+        viewModel.cryptoList.observe(viewLifecycleOwner, Observer {
+            cryptoList = it
+            if (isFill(it)) {
+                viewModel.getDataOfList()
+                viewModel.getImgOfList()
+                cryptoAdapter.update(it)
+            } else {
+                cryptoAdapter.update(it)
+            }
+        })
+    }
+
+    private fun isFill(it: java.util.ArrayList<CryptoData>?): Boolean {
+        for (elem in it!!) {
+            if (elem.imgURL != emptyString) return false
+            if (elem.percent_change_1h != emptyData) return false
+        }
+        return true
     }
 
     private fun initRecyclerView() {
@@ -76,7 +73,13 @@ class ListCrypto() : Fragment() {
             layoutManager = LinearLayoutManager(context)
             cryptoAdapter = ListCryptoRecyclerAdapter()
             recycler_view.adapter = cryptoAdapter
+            cryptoAdapter.submitList(cryptoList)
         }
     }
 
+    private fun restoreCryptoList() {
+        if (viewModel.cryptoList.value.isNullOrEmpty()) {
+            viewModel.getCryptoList()
+        }
+    }
 }

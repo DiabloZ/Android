@@ -1,4 +1,4 @@
-package suhov.com.fragments
+package suhov.com.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,7 @@ import suhov.com.R
 class EmptyFragment() : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_empty, container, false)
-        return view
+        return inflater.inflate(R.layout.fragment_empty, container, false)
     }
 
 }

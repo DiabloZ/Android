@@ -1,4 +1,4 @@
-package Suhov.com
+package suhov.com
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package suhov.com.models.list
+package suhov.com.network.models.list
 
 import com.google.gson.annotations.SerializedName
 

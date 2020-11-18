@@ -1,12 +1,9 @@
-package suhov.com.view
+package suhov.com.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -15,33 +12,24 @@ import kotlinx.android.synthetic.main.slide_crypto_list_item.view.*
 import suhov.com.R
 import suhov.com.network.models.CryptoData
 import suhov.com.utils.Constants
+import suhov.com.view.MainFragmentDirections
 
 
-class ListCryptoRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ListCryptoRecyclerAdapter : RecyclerView.Adapter<ListCryptoRecyclerAdapter.ListCryptoViewHolder>() {
 
     private var items: List<CryptoData> = ArrayList()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListCryptoViewHolder {
         return ListCryptoViewHolder(
                 LayoutInflater.from(parent.context).inflate(R.layout.slide_crypto_list_item, parent, false), items
         )
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (holder) {
-            is ListCryptoViewHolder -> {
-                holder.bind(items.get(position))
-            }
-        }
-    }
+    override fun onBindViewHolder(holder: ListCryptoViewHolder, position: Int) {holder.bind(items[position])}
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int {return items.size}
 
-    fun submitList(itemList : List<CryptoData>){
-        items = itemList
-    }
+    fun submitList(itemList : List<CryptoData>){items = itemList}
 
     fun update(itemList: List<CryptoData>) {
         items = itemList
@@ -52,31 +40,34 @@ class ListCryptoRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
             itemView: View,
             items: List<CryptoData>
     ) : RecyclerView.ViewHolder(itemView){
-        private val imgCrypto = itemView.img_Crypto
-        private val titleCrypto = itemView.title_Crypto
-        private val priceCrypto = itemView.price_Crypto
-        private val marketDynamicsDay = itemView.market_Dynamics_Day
-        private val marketDynamicsHour = itemView.market_Dynamics_Hour
+        private val imgCrypto = itemView.img_crypto
+        private val titleCrypto = itemView.title_crypto
+        private val priceCrypto = itemView.price_crypto
+        private val marketDynamicsDay = itemView.market_dynamics_day
+        private val marketDynamicsHour = itemView.market_dynamics_hour
+        private val currencies = "$"
+        private val percent = "%"
+        private val cutToTwoSymbol = "%.2f"
+        private val cutToFourSymbol = "%.4f"
 
         init {
             itemView.setOnClickListener {
                 val position = adapterPosition
                 val action = MainFragmentDirections.actionListCryptoToDetailsViewFragment(position, items.toTypedArray())
                 Navigation.findNavController(it).navigate(action)
-                Toast.makeText(itemView.context, "you update crypto info in cell #${position + 1}", Toast.LENGTH_SHORT).show()
             }
         }
 
         @SuppressLint("SetTextI18n")
         fun bind(item: CryptoData) {
-            titleCrypto.setText(item.symbol)
-            priceCrypto.setText("$" + String.format("%.4f", item.price))
-            marketDynamicsHour.setText(String.format("%.2f", item.percent_change_1h) + "%")
-            marketDynamicsDay.setText(String.format("%.2f", item.percent_change_24h) + "%")
+            titleCrypto.text = item.symbol
+            priceCrypto.text = currencies + String.format(cutToFourSymbol, item.price)
+            marketDynamicsHour.text =  String.format(cutToTwoSymbol, item.percent_change_1h) + percent
+            marketDynamicsDay.text =  String.format(cutToTwoSymbol, item.percent_change_24h) + percent
 
             Glide.with(itemView.context)
                     .load(Constants.IMG_URL_MAIN + item.imgURL)
-                    .placeholder(R.drawable.placeholder)
+                    .placeholder(R.drawable.guru)
                     .into(imgCrypto)
         }
     }

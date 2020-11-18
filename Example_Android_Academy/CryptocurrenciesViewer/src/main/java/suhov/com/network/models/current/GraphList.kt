@@ -1,4 +1,4 @@
-package suhov.com.network.models.current.graphDay
+package suhov.com.network.models.current
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package suhov.com.network.models
+package suhov.com.network
 
 import retrofit2.Call
 import retrofit2.http.GET
@@ -7,10 +7,18 @@ import suhov.com.network.models.current.GraphList
 
 interface DetailsViewNetwork {
     @GET("histohour")
-    fun getCurrentCryptoData(
-            @Query("fsym")coinSymbol: String,
-            @Query("tsym")currency:String,
-            @Query("aggregate")writeOne:String,
-            @Query("limit") limitHour:String
+    fun getCurrentCryptoDataDay(
+            @Query("fsym") coinSymbol: String,
+            @Query("tsym") currency:String,
+            @Query("aggregate") scope:String,
+            @Query("limit") dayInterval:String
+    ): Call<GraphList>
+
+    @GET("histoday")
+    fun getCurrentCryptoDataOther(
+            @Query("fsym") coinSymbol: String,
+            @Query("tsym") currency:String,
+            @Query("aggregate") scope:String,
+            @Query("limit") dayInterval:String
     ): Call<GraphList>
 }

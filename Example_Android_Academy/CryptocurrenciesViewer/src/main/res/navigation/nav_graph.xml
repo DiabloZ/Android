@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="suhov.com.view.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_listCrypto_to_detailsViewFragment"
+            app:destination="@id/detailsViewFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="arrCrypto"
+            app:argType="suhov.com.network.models.CryptoData[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsViewFragment"
+        android:name="suhov.com.view.DetailsViewFragment"
+        android:label="DetailsViewFragment" >
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="arrCrypto"
+            app:argType="suhov.com.network.models.CryptoData[]" />
+    </fragment>
 
 </navigation>
