@@ -10,12 +10,16 @@
         android:label="MainFragment" >
         <action
             android:id="@+id/action_listCrypto_to_detailsViewFragment"
-            app:destination="@id/detailsViewFragment" />
+            app:destination="@id/detailsViewFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
 
     <fragment
         android:id="@+id/detailsViewFragment"
         android:name="com.suhov.cryptocurrencuesviewer.view.DetailsViewFragment"
-        android:label="DetailsViewFragment" />
+        android:label="DetailsViewFragment"/>
 
 </navigation>

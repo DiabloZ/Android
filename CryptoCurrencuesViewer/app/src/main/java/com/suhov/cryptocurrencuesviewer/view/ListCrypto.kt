@@ -41,6 +41,10 @@ class ListCrypto : Fragment() {
         restoreCryptoList()
         initFindEdit()
         setUpRefreshLayout()
+
+        button_for_test.setOnClickListener{
+
+        }
     }
 
     private fun setObserve() {

@@ -2,7 +2,6 @@ package com.suhov.cryptocurrencuesviewer.view
 
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -21,17 +20,14 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.ColorTemplate
-import com.github.mikephil.charting.utils.Utils
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.details_view_fragment.*
-import kotlinx.android.synthetic.main.details_view_fragment.liner_chart_view
 import com.suhov.cryptocurrencuesviewer.R
 import com.suhov.cryptocurrencuesviewer.adapters.DetailViewAdapter
 import com.suhov.cryptocurrencuesviewer.network.models.CryptoData
 import com.suhov.cryptocurrencuesviewer.viewModel.DetailViewViewModel
+import kotlinx.android.synthetic.main.details_view_fragment.*
 import org.koin.android.ext.android.get
 import org.koin.android.viewmodel.ext.android.viewModel
-import org.koin.core.context.GlobalContext.get
 import kotlin.math.abs
 
 class DetailsViewFragment : Fragment() {
@@ -59,11 +55,14 @@ class DetailsViewFragment : Fragment() {
         setUpViewPagerCryptoData()
         setUpGraph()
     }
+
     private fun setPositionViewPager(){
-        Log.i("getPositionData", "setPositionViewPager: $positionCrypto")
-        Log.d("getPositionData", "received: size ${cryptoList.size}")
         view_pager2.currentItem = positionCrypto
+        view_pager2.post {
+            view_pager2.setCurrentItem(positionCrypto, false)
+        }
     }
+
     private fun setObserve() {
         viewModel.showProgress.observe(viewLifecycleOwner, {
             if (it) {
@@ -73,7 +72,6 @@ class DetailsViewFragment : Fragment() {
                     if (cryptoList[positionCrypto].data_change_day.isNotEmpty() || cryptoList[positionCrypto].data_change_year.isNotEmpty()) {
                         Log.d("getPositionData", "viewModel.showProgress.observe:came position - $positionCrypto change position ID - ${cryptoList[positionCrypto].id} position name - ${cryptoList[positionCrypto].symbol}")
                         updateGraph()
-                        setPositionViewPager()
                     }
                 }
                 load_progress.visibility = GONE
@@ -98,7 +96,7 @@ class DetailsViewFragment : Fragment() {
         viewModel.graph.observe(viewLifecycleOwner, {
             graph = it
             Log.d("getPositionData", "viewModel.graph.observe: $positionCrypto")
-            if(cryptoList.size != 0) {
+            if (cryptoList.size != 0) {
                 viewModel.getDetailViewItem()
             }
         })
@@ -111,6 +109,7 @@ class DetailsViewFragment : Fragment() {
                 viewModel.changeGraph(tab!!.position)
                 emptyValueGraph()
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
@@ -162,7 +161,9 @@ class DetailsViewFragment : Fragment() {
                 graph_data.text = e?.y.toString()
             }
 
-            override fun onNothingSelected() {emptyValueGraph()}
+            override fun onNothingSelected() {
+                emptyValueGraph()
+            }
         })
     }
 
@@ -196,7 +197,6 @@ class DetailsViewFragment : Fragment() {
         liner_chart_view.data = LineData(lineDataSet)
         liner_chart_view.invalidate()
         Log.i("getPositionData", "setUpGraph(): ${positionCrypto}")
-        setPositionViewPager()
     }
     private fun emptyValueGraph() {
         graph_data.text = emptyString
