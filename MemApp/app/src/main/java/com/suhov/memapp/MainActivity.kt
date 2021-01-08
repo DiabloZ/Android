@@ -13,11 +13,12 @@ import androidx.compose.ui.unit.*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             Column(
                 modifier = Modifier.padding(16.dp)
             ) {
-                Text(text = "testText - hello compose!")
+                Text(text = "testText - hello compose!", modifier = Modifier.padding(16.dp))
                 Spacer(modifier = Modifier.padding(top = 10.dp))
 
                 Button(onClick = {
@@ -27,5 +28,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
     }
 }
