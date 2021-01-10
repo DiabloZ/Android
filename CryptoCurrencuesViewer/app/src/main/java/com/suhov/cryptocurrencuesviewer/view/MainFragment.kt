@@ -27,6 +27,7 @@ class MainFragment : Fragment() {
 
     private fun initViewPager2WithFragments() {
         val viewPager: ViewPager2 = requireView().liner_chart_view
+
         viewPager.adapter = StateAdapter(childFragmentManager, lifecycle)
 
         TabLayoutMediator(tab_layout, viewPager){tab, position ->
