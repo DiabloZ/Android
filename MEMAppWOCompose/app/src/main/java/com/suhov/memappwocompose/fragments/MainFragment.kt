@@ -1,11 +1,12 @@
 package com.suhov.memappwocompose.fragments
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.suhov.memappwocompose.R
 import com.suhov.memappwocompose.adapters.ViewPagerAdapter
@@ -27,18 +28,19 @@ class MainFragment : Fragment(){
     }
 
     private fun setUpTabs() {
-        val VP = ViewPagerAdapter(childFragmentManager, lifecycle)
-        VP.addFragment(LastsFragment(),resources.getString(R.string.lasts),resources.getDrawable(R.drawable.lasts, null))
-        VP.addFragment(HotsFragment(),resources.getString(R.string.hots),resources.getDrawable(R.drawable.hots, null))
-        VP.addFragment(RandomFragment(),resources.getString(R.string.random),resources.getDrawable(R.drawable.random, null))
-        VP.addFragment(FavoritesFragment(),resources.getString(R.string.favorites),resources.getDrawable(R.drawable.favorites, null))
+        val viewPagerAdapter = ViewPagerAdapter(childFragmentManager, lifecycle)
+        viewPagerAdapter.addFragment(LastsFragment(), getStringFromResource(R.string.lasts), getDrawableFromResource(R.drawable.lasts))
+        viewPagerAdapter.addFragment(HotsFragment(), getStringFromResource(R.string.hots), getDrawableFromResource(R.drawable.hots))
+        viewPagerAdapter.addFragment(RandomFragment(), getStringFromResource(R.string.random), getDrawableFromResource(R.drawable.random))
+        viewPagerAdapter.addFragment(FavoritesFragment(), getStringFromResource(R.string.favorites), getDrawableFromResource(R.drawable.favorites))
+        view_pager.adapter = viewPagerAdapter
 
-        view_pager.adapter = VP
-        TabLayoutMediator(tab_layout, view_pager
-        ){tab, position ->
-            tab.text = resources.getStringArray(R.array.tabs_names)[position]
+        TabLayoutMediator(tab_layout, view_pager){tab, position ->
+            tab.text = viewPagerAdapter.getTitleItem(position)
+            tab.icon = viewPagerAdapter.getIconItem(position)
         }.attach()
-
-
     }
+
+    private fun getDrawableFromResource(id: Int):Drawable = ContextCompat.getDrawable(requireActivity(), id) as Drawable
+    private fun getStringFromResource(id: Int):String = resources.getString(id)
 }

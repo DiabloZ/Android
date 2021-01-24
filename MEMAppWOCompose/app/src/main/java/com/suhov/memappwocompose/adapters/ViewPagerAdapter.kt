@@ -12,7 +12,7 @@ class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle):
         FragmentStateAdapter(fragmentManager, lifecycle) {
     private val mFragmentList = ArrayList<Fragment>()
     private val mFragmentTitleList = ArrayList<String>()
-    private val mFragmentIconList = ArrayList<Drawable?>()
+    private val mFragmentIconList = ArrayList<Drawable>()
 
 
 
@@ -20,11 +20,12 @@ class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle):
 
     override fun createFragment(position: Int): Fragment = mFragmentList[position]
 
-
-    fun addFragment(fragment: Fragment, titleFragment: String, icon: Drawable?){
+    fun addFragment(fragment: Fragment, titleFragment: String, icon: Drawable? = null){
         mFragmentList.add(fragment)
         mFragmentTitleList.add(titleFragment)
-        mFragmentIconList.add(icon)
+        if (icon != null)
+            mFragmentIconList.add(icon)
     }
-
+    fun getTitleItem(position: Int):String =  mFragmentTitleList[position]
+    fun getIconItem(position: Int):Drawable =  mFragmentIconList[position]
 }
