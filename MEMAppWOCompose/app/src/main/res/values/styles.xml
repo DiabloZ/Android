@@ -3,4 +3,10 @@
     <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">10sp</item>
     </style>
+    <style name="ButtomSheetTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>
