@@ -15,18 +15,20 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/some_item_text_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="some item"
-        app:layout_constraintTop_toBottomOf="@id/headline"
+        app:layout_constraintTop_toTopOf="@id/some_item_switch"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/some_item_switch"
         app:layout_constraintEnd_toStartOf="@id/some_item_switch"/>
 
     <Switch
         android:id="@+id/some_item_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/some_item_text_view"/>
+        app:layout_constraintTop_toBottomOf="@id/headline"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

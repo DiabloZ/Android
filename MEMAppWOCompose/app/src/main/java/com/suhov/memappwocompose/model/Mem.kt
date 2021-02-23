@@ -1,68 +1,71 @@
 package com.suhov.memappwocompose.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class MemList(
 	@field:SerializedName("result")
-	val result: List<Mem?>? = null,
+	val result: List<Mem?>? = emptyList(),
 
 	@field:SerializedName("totalCount")
-	val totalCount: Int? = null
+	val totalCount: Int? = 0
 )
-
+@Entity(tableName = "MemDB")
 data class Mem(
 
+	@PrimaryKey
+	@field:SerializedName("id")
+	val id: Int? = 0,
+
 	@field:SerializedName("date")
-	val date: String? = null,
+	val date: String? = "",
 
 	@field:SerializedName("previewURL")
-	val previewURL: String? = null,
+	val previewURL: String? = "",
 
 	@field:SerializedName("author")
-	val author: String? = null,
+	val author: String? = "",
 
 	@field:SerializedName("description")
-	val description: String? = null,
+	val description: String? = "",
 
 	@field:SerializedName("type")
-	val type: String? = null,
+	val type: String? = "",
 
 	@field:SerializedName("videoSize")
-	val videoSize: Int? = null,
+	val videoSize: Int? = 0,
 
 	@field:SerializedName("gifURL")
-	val gifURL: String? = null,
+	val gifURL: String? = "",
 
 	@field:SerializedName("videoPath")
-	val videoPath: String? = null,
+	val videoPath: String? = "",
 
 	@field:SerializedName("videoURL")
-	val videoURL: String? = null,
+	val videoURL: String? = "",
 
 	@field:SerializedName("fileSize")
-	val fileSize: Int? = null,
+	val fileSize: Int? = 0,
 
 	@field:SerializedName("gifSize")
-	val gifSize: Int? = null,
+	val gifSize: Int? = 0,
 
 	@field:SerializedName("commentsCount")
-	val commentsCount: Int? = null,
+	val commentsCount: Int? = 0,
 
 	@field:SerializedName("width")
-	val width: String? = null,
+	val width: String? = "",
 
 	@field:SerializedName("votes")
-	val votes: Int? = null,
-
-	@field:SerializedName("id")
-	val id: Int? = null,
+	val votes: Int? = 0,
 
 	@field:SerializedName("height")
-	val height: String? = null,
+	val height: String? = "",
 
 	@field:SerializedName("canVote")
-	val canVote: Boolean? = null,
+	val canVote: Boolean? = false,
 
 	@field:SerializedName("embedId")
-	val embedId: String? = null
+	val embedId: String? = ""
 )
