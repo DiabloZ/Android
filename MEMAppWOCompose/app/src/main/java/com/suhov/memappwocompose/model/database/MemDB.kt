@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.suhov.memappwocompose.model.Mem
+import com.suhov.memappwocompose.model.MemNetworkEntity
 
 @Database(entities = [Mem::class], version = 1)
 abstract class MemDB: RoomDatabase() {

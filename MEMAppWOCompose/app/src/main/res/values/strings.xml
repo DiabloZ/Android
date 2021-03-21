@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MEMAppWOCompose</string>
+    //Tab names
+    <string name="lasts">New</string>
+    <string name="hots">Hot</string>
+    <string name="random">Random</string>
+    <string name="favorites">Favorites</string>
+
+</resources>

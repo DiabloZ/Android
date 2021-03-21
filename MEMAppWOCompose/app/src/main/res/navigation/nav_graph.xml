@@ -6,11 +6,11 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.suhov.memappwocompose.fragments.MainFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.MainFragment"
         android:label="MainFragment" />
     <fragment
         android:id="@+id/lastsFragment"
-        android:name="com.suhov.memappwocompose.fragments.LastsFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.LastsFragment"
         android:label="LastsFragment" >
         <action
             android:id="@+id/action_lastsFragment_to_detailViewFragment"
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/hotsFragment"
-        android:name="com.suhov.memappwocompose.fragments.HotsFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.HotsFragment"
         android:label="HotsFragment" >
         <action
             android:id="@+id/action_hotsFragment_to_detailViewFragment"
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/randomFragment"
-        android:name="com.suhov.memappwocompose.fragments.RandomFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.RandomFragment"
         android:label="RandomFragment" >
         <action
             android:id="@+id/action_randomFragment_to_detailViewFragment"
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.suhov.memappwocompose.fragments.FavoritesFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.FavoritesFragment"
         android:label="FavoritesFragment" >
         <action
             android:id="@+id/action_favoritesFragment_to_detailViewFragment"
@@ -54,10 +54,10 @@
     </fragment>
     <fragment
         android:id="@+id/setupFragment"
-        android:name="com.suhov.memappwocompose.fragments.SetupFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.SetupFragment"
         android:label="SetupFragment" />
     <fragment
         android:id="@+id/detailViewFragment"
-        android:name="com.suhov.memappwocompose.fragments.DetailViewFragment"
+        android:name="com.suhov.memappwocompose.presentation.ui.mem.fragments.DetailViewFragment"
         android:label="DetailViewFragment" />
 </navigation>
